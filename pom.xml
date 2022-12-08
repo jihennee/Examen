@@ -45,68 +45,6 @@
     <artifactId>maven-resources-plugin</artifactId>
     <version>3.1.0</version>
 </plugin>
-<.plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>2.5.3</version>
-				<configuration>
-					<Exclut>
-						<exclure>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclure>
-					</Exclut>
-				</configuration>
-			</.plugin>
-			<.plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.7</version>
-				<Exécutions>
-					<exécution>
-						<buts>
-							<but>prepare-agent</objectif>
-						</buts>
-					</exécution>
-					<!-- attaché à la phase de test Maven -->
-					<exécution>
-						<id>rapport</id>
-						<phase>test</phase>
-						<buts>
-							<objectif>rapport</objectif>
-						</buts>
-					</exécution>
-				</Exécutions>
-			</.plugin>
-			<.plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.1.0</version>
-			</.plugin>
-			<.plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19.1</version> <!-- compte jusqu’à présent-->
-				<Dépendances>
-					<!-- laisser surefire exécuter JUnit 4 mais aussi JUnit 5 tests -->
-					<dépendance>
-						<groupId>org.junit.platform</groupId>
-						<artifactId>junit-platform-surefire-provider</artifactId>
-						<version>1.0.1</version>
-					</dépendance>
-					<!-- Moteur vintage JUnit pour exécuter les tests JUnit 3 ou JUnit 4 -->
-					<dépendance>
-						<groupId>org.junit.vintage</groupId>
-						<artifactId>junit-vintage-engine</artifactId>
-						<version>4.12.1</version>
-					</dépendance>
-					<!-- Le moteur JUnit 5 pour exécuter les tests JUnit 5 -->
-					<dépendance>
-						<groupId>org.junit.jupiter</groupId>
-						<artifactId>junit-jupiter-engine</artifactId>
-						<version>5.0.1</version>
-					</dépendance>
-				</Dépendances>
-			</.plugin>
 
 
 
