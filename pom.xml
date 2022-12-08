@@ -17,141 +17,142 @@
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
-	<distributionGestion>
-<depot>
+
+	<distributionManagement>
+<repository>
 <id>deploymentRepo</id>
-<nom>Référentiel Nexus</nom>
+<name>Nexus Repository</name>
 <url>http://localhost:8081/repository/maven-releases/</url>
-</depot>
-</distributionGestion>
-	<Dépendances>
-		<dépendance>
+</repository>
+</distributionManagement>
+	<dependencies>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dépendance>
-		<dépendance>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dépendance>
+		</dependency>
 
-		<dépendance>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<portée>exécution</portée>
-		</dépendance>
-		<dépendance>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<facultatif>vrai</facultatif>
-		</dépendance>
-		<dépendance>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<portée>test</portée>
-		</dépendance>
+			<scope>test</scope>
+		</dependency>
 
-		<dépendance>
+		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-boot-starter</artifactId>
 			<version>3.0.0</version>
-		</dépendance>
-		<dépendance>
+		</dependency>
+		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>3.0.0</version>
-		</dépendance>
-		<dépendance>
+		</dependency>
+		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.8.2</version>
-			<portée>compiler</portée>
-		</dépendance>
-		<dépendance>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<portée>test</portée>
-		</dépendance>
-		<dépendance>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-test</artifactId>
 			<version>2.7.1</version>
-			<portée>compiler</portée>
-		</dépendance>
-		<dépendance>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>RELEASE</version>
-			<portée>test</portée>
-		</dépendance>
+			<scope>test</scope>
+		</dependency>
 
-	</Dépendances>
+	</dependencies>
 
-	<construire>
-		<Plugins>
-			<.plugin>
+	<build>
+		<plugins>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>2.5.3</version>
 				<configuration>
-					<Exclut>
-						<exclure>
+					<excludes>
+						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
-						</exclure>
-					</Exclut>
+						</exclude>
+					</excludes>
 				</configuration>
-			</.plugin>
-			<.plugin>
+			</plugin>
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.7</version>
-				<Exécutions>
-					<exécution>
-						<buts>
-							<but>prepare-agent</objectif>
-						</buts>
-					</exécution>
-					<!-- attaché à la phase de test Maven -->
-					<exécution>
-						<id>rapport</id>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<!-- attached to Maven test phase -->
+					<execution>
+						<id>report</id>
 						<phase>test</phase>
-						<buts>
-							<objectif>rapport</objectif>
-						</buts>
-					</exécution>
-				</Exécutions>
-			</.plugin>
-			<.plugin>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.1.0</version>
-			</.plugin>
-			<.plugin>
+			</plugin>
+			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.19.1</version> <!-- compte jusqu’à présent-->
-				<Dépendances>
-					<!-- laisser surefire exécuter JUnit 4 mais aussi JUnit 5 tests -->
-					<dépendance>
+				<version>2.19.1</version> <!-- matters until now-->
+				<dependencies>
+					<!-- to let surefire to run JUnit 4 but also JUnit 5 tests -->
+					<dependency>
 						<groupId>org.junit.platform</groupId>
 						<artifactId>junit-platform-surefire-provider</artifactId>
 						<version>1.0.1</version>
-					</dépendance>
-					<!-- Moteur vintage JUnit pour exécuter les tests JUnit 3 ou JUnit 4 -->
-					<dépendance>
+					</dependency>
+					<!-- JUnit vintage engine to run JUnit 3 or JUnit 4 tests -->
+					<dependency>
 						<groupId>org.junit.vintage</groupId>
 						<artifactId>junit-vintage-engine</artifactId>
 						<version>4.12.1</version>
-					</dépendance>
-					<!-- Le moteur JUnit 5 pour exécuter les tests JUnit 5 -->
-					<dépendance>
+					</dependency>
+					<!-- JUnit 5 engine to run JUnit 5 tests -->
+					<dependency>
 						<groupId>org.junit.jupiter</groupId>
 						<artifactId>junit-jupiter-engine</artifactId>
 						<version>5.0.1</version>
-					</dépendance>
-				</Dépendances>
-			</.plugin>
-		</Plugins>
-	</construire>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
 
-</projet>
-	
+</project>
+
