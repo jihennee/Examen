@@ -16,6 +16,11 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	<dépôt>
+<id>deploymentRepo</id>
+<nom>Référentiel Nexus</nom>
+<url>http://localhost:8081/repository/maven-releases/</url>
+</dépôt>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
