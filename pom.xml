@@ -13,16 +13,16 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ExamThourayaS2</name>
 	<description>Demo project for Spring Boot</description>
-	<Propriétés>
+	<properties>
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
-	</Propriétés>
+	</properties>
 	<distributionGestion>
-<dépôt>
+<depot>
 <id>deploymentRepo</id>
 <nom>Référentiel Nexus</nom>
 <url>http://localhost:8081/repository/maven-releases/</url>
-</dépôt>
+</depot>
 </distributionGestion>
 	<Dépendances>
 		<dépendance>
