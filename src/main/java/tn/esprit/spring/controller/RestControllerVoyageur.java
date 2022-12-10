@@ -14,7 +14,7 @@ import tn.esprit.spring.repository.TrainRepository;
 import tn.esprit.spring.services.IVoyageurService;
 import tn.esprit.spring.services.ITrainService;
 import tn.esprit.spring.services.IVoyageService;
-
+@RequestMapping("/voyage")
 @RestController
 public class RestControllerVoyageur {
 
