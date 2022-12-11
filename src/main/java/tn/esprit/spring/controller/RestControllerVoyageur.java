@@ -10,7 +10,7 @@ import tn.esprit.spring.entities.Voyageur;
 import tn.esprit.spring.entities.Train;
 import tn.esprit.spring.entities.Ville;
 import tn.esprit.spring.entities.Voyage;
-import tn.esprit.spring.repository.TrainRepository;
+
 import tn.esprit.spring.services.IVoyageurService;
 import tn.esprit.spring.services.ITrainService;
 import tn.esprit.spring.services.IVoyageService;
@@ -50,19 +50,16 @@ public class RestControllerVoyageur {
         iVoyageurservice.ajouterVoyageur(Voyageur);
     }
 
-    //http://localhost:8083/SpringMVC/servlet/affecterTrainAVoyage/{idtr}/{idvyg}
+    
     @PutMapping(value = "/affecterTrainAVoyage/{idtr}/{idvyg}")
-    //1 1  2 2 3 3 4 4
+    
     public void affecterTrainAVoyage(@PathVariable("idtr") Long idTrain, @PathVariable("idvyg") Long idVoyage) {
         ivoyageservice.affecterTrainAVoyage(idTrain, idVoyage);
     }
 
 //@PutMapping(value = "/affecterTrainAGare/{idtr}/{idgdpt}/{idgar}")
 //public void affecterTrainAGare(@PathVariable("idtr")Long idTrain, @PathVariable("idgdpt")Long idGareDepart,@PathVariable("idgar") Long idGareArrivee)
-//{
-//	igareservice.affecterTrainAGare(idTrain,idGareDepart,idGareArrivee);
-//
-//}
+
 
     ////http://localhost:8083/SpringMVC/servlet/affecterTrainAVoyageur/1/EZZAHRA/7.45
     @PutMapping(value = "/affecterTrainAVoyageur/{idc}/{nomgdpt}/{nomgarr}/{heuredept}")
