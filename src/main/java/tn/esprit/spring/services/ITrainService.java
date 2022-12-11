@@ -2,7 +2,7 @@ package tn.esprit.spring.services;
 import tn.esprit.spring.entities.Train;
 import tn.esprit.spring.entities.Ville;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public interface ITrainService {
