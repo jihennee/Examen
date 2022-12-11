@@ -1,8 +1,8 @@
 package tn.esprit.spring.services;
 
-import org.springframework.stereotype.Repository;
 
-import tn.esprit.spring.entities.Voyage;
+
+
 import tn.esprit.spring.entities.Voyageur;
 
 import java.util.List;
